@@ -6,10 +6,12 @@ class HomePageSettingsModel(models.Model):
     tab_title = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=100)
     blue_navbar_button = models.CharField(max_length=100)
+    blue_navbar_button_link = models.URLField()
     bigest_title_text = models.CharField(max_length=100)
     discount_end = models.DateTimeField()
     until_discount_end_text = models.TextField(max_length=500)
     under_bigest_title_text = models.TextField(max_length=500)
+    link_to_full_reviews_list = models.URLField()
 
     def clean(self) -> None:
         if not HomePageSettingsModel.objects.filter(pk=self.pk).exists() and \
