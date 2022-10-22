@@ -1,0 +1,41 @@
+version: '3.4'
+
+services:
+  web:
+    build:
+      context: samara_renovation_of_apartaments/
+      network: host
+    command: sh -c "python3 manage.py migrate &&
+                    python3 manage.py wait_for_db &&
+                    gunicorn --bind 0.0.0.0:8000 samara_renovation_of_apartaments.wsgi:application"
+    expose:
+      - 8000
+    volumes:
+      - static_volume:/code/staticfiles
+      - media_volume:/code/mediafiles
+    env_file:
+      - ./samara_renovation_of_apartaments/samara_renovation_of_apartaments/.env.prod
+    depends_on:
+      - db
+
+  nginx:
+    build: ./nginx
+    volumes:
+      - static_volume:/code/staticfiles
+      - media_volume:/code/mediafiles
+    ports:
+      - "1337:80"
+    depends_on:
+      - web
+
+  db:
+    image: postgres:12-alpine
+    env_file:
+      - ./samara_renovation_of_apartaments/samara_renovation_of_apartaments/.env.prod
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
