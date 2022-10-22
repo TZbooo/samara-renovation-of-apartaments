@@ -1,0 +1,52 @@
+.project-image-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+#clou_xs {
+    margin-bottom: 60px;
+}
+
+.reviews-wrap__text {
+    margin-top: 20px;
+}
+
+.button {
+    text-align: center;
+    margin-top: 15px!important;
+    margin-left: 0 !important;
+}
+
+.button:hover {
+    transform: scale(0.97);
+}
+
+#headerwrap {
+    padding-bottom: 20px;
+}
+
+@media (min-width: 1200px) {
+    .navbar-content {
+        left: 180px;
+        padding-left: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-content {
+        padding-left: 30px;
+    }
+}
+
+.button__center {
+	margin-right: auto !important;
+	margin-left: auto !important;
+}
+
+.text-above-timer {
+    margin-bottom: 30px;
+}
+
+html, body {
+    overflow-x: hidden !important;
+}
