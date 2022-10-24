@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0016_homepagesettingsmodel_projects_columns_number'),
+        ('home', '0015_homepagesettingsmodel_brand_name_and_more'),
     ]
 
     operations = [
