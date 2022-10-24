@@ -13,13 +13,14 @@ def create_default_settings(*args, **kwargs):
         discount_end=tz.now(),
         until_discount_end_text='до конца скидки 10% осталось',
         under_bigest_title_text='поделись с другом и получи скидку 10%',
-        link_to_full_reviews_list='https://youtube.com'
+        link_to_full_reviews_list='https://youtube.com',
+        brand_name='REMONT.RU',
     )
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('home', '0014_homepagesettingsmodel_blue_navbar_button_link_and_more'),
+        ('home', '0015_homepagesettingsmodel_brand_name_and_more'),
     ]
     operations = [
         migrations.RunPython(create_default_settings),

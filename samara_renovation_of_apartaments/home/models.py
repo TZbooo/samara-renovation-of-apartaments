@@ -2,8 +2,21 @@ from django.db import models
 from django.core.exceptions import ValidationError
 
 
+class ContactsColumnsNumber(models.IntegerChoices):
+    ONE = 1
+    TWO = 2
+    THREE = 3
+
+
+class ProjectsColumnsNumber(models.IntegerChoices):
+    ONE = 1
+    TWO = 2
+    THREE = 3
+
+
 class HomePageSettingsModel(models.Model):
     tab_title = models.CharField(max_length=100)
+    brand_name = models.CharField(max_length=20)
     phone_number = models.CharField(max_length=100)
     blue_navbar_button = models.CharField(max_length=100)
     blue_navbar_button_link = models.URLField()
@@ -12,6 +25,8 @@ class HomePageSettingsModel(models.Model):
     until_discount_end_text = models.TextField(max_length=500)
     under_bigest_title_text = models.TextField(max_length=500)
     link_to_full_reviews_list = models.URLField()
+    contacts_columns_number = models.IntegerField(default=1, choices=ContactsColumnsNumber.choices)
+    projects_columns_number = models.IntegerField(default=1, choices=ProjectsColumnsNumber.choices)
 
     def clean(self) -> None:
         if not HomePageSettingsModel.objects.filter(pk=self.pk).exists() and \

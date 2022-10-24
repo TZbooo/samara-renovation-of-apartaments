@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.views.generic import TemplateView
 
-# Create your views here.
+
+class RobotsTXTView(TemplateView):
+    template_name = 'robots.txt'
+    content_type = 'text/plain'

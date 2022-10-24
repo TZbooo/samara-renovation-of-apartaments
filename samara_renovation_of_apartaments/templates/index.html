@@ -1,4 +1,5 @@
 {% load static %}
+{% load mathfilters %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +34,7 @@
 			<div class="row">
 				<div class="col-lg-3 navbar-header">
 					<a class="navbar-brand" href="index.html"
-						style="margin-top:15px;color: white; font-size:30px;">РЕМОНТ.PRO</a>
+						style="margin-top:15px;color: white; font-size:30px;">{{ settings.brand_name }}</a>
 				</div>
 				<div class="navbar-content col-lg-9">
 					<div class="row">
@@ -151,14 +152,16 @@
 			<div class="container">
 				<div class="row centered mt mb">
 					<h1>Проекты</h1>
-					{% for item in projects %}
-					<div class="col-lg-4 col-md-4 col-sm-4 gallery">
-						<a class="project-image-wrap" href="work.html"><img src="{{ item.preview_image.url }}"
-								class="img-responsive">
-							<div class="price">{{ item.description }}</div>
-						</a>
-					</div>
-					{% endfor %}
+					{% with 12|intdiv:settings.projects_columns_number as bootstrap_columns_number %}
+						{% for item in projects %}
+							<div class="col-lg-{{ bootstrap_columns_number }} col-md-{{ bootstrap_columns_number }} col-sm-{{ bootstrap_columns_number }} gallery">
+								<a class="project-image-wrap" href="work.html"><img src="{{ item.preview_image.url }}"
+										class="img-responsive">
+									<div class="price">{{ item.description }}</div>
+								</a>
+							</div>
+						{% endfor %}
+						{% endwith %}
 				</div>
 				<! --/row -->
 			</div>
@@ -192,13 +195,15 @@
 		<div class="container">
 			<div class="row centered mt mb">
 				<h1>Контакты</h1></br>
-				{% for contact in contacts %}
-				<div class="col-lg-4 col-md-4 col-sm-4">
-					<b>{{ contact.city }}:</b>
-					<p>{{ contact.address|linebreaks }}</p>
-					<p>{{ contact.phone }}</p>
-				</div>
-				{% endfor %}
+				{% with 12|intdiv:settings.contacts_columns_number as bootstrap_columns_number %}
+					{% for contact in contacts %}
+						<div class="col-lg-{{ bootstrap_columns_number }} col-md-{{ bootstrap_columns_number }} col-sm-{{ bootstrap_columns_number }}">
+							<b>{{ contact.city }}:</b>
+							<p>{{ contact.address|linebreaks }}</p>
+							<p>{{ contact.phone }}</p>
+						</div>
+					{% endfor %}
+				{% endwith %}
 			</div>
 		</div>
 		<div class="container">
