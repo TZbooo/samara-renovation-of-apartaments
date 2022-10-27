@@ -23,12 +23,18 @@
 
 #headerwrap {
     padding-bottom: 20px;
+    padding-top: 225px;
 }
 
 @media (min-width: 1200px) {
     .navbar-content {
         left: 180px;
         padding-left: 30px;
+    }
+
+    #headerwrap {
+        padding-top: 180px;
+        padding-bottom: 0;
     }
 }
 
