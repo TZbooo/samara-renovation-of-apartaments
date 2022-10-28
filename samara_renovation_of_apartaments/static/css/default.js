@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    console.log('it was me, Dio!')
     $('iframe').each(function () {/*fix youtube z-index*/
         var url = $(this).attr("src");
         if (url.indexOf("youtube.com") >= 0) {
