@@ -19,7 +19,7 @@ class HomePageSettingsModel(models.Model):
     brand_name = models.CharField(max_length=20)
     phone_number = models.CharField(max_length=100)
     blue_navbar_button = models.CharField(max_length=100)
-    blue_navbar_button_link = models.URLField()
+    blue_navbar_button_link = models.CharField(max_length=200)
     bigest_title_text = models.TextField(max_length=100)
     bigest_title_text_font_size_in_pixels = models.CharField(max_length=20, default='40px')
     discount_end = models.DateTimeField()
