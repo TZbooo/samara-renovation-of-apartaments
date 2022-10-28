@@ -214,10 +214,11 @@
 		<div class="container">
 			<div class="row centered">
 				<a href="{{ settings.link_to_full_reviews_list }}">
-					<h1 class="button button__center">Отзывы</h1>
+					<h1 class="button button__center" style="margin-top: 0;">Отзывы</h1>
 				</a>
 			</div>
-			<div class="reviews-wrap__text row centered">
+			</br>
+			<div class="reviews-wrap__text row centered mb">
 				{% for review in reviews %}
 				<div class="col-lg-4 col-md-4 col-sm-4">
 					<b>{{ review.reviewer_name }}</b>
