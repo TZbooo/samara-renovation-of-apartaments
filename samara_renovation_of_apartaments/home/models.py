@@ -1,6 +1,8 @@
 from django.db import models
 from django.core.exceptions import ValidationError
 
+from .mixins import InstancesLimitModelMixin
+
 
 class ContactsColumnsNumber(models.IntegerChoices):
     ONE = 1
@@ -14,7 +16,7 @@ class ProjectsColumnsNumber(models.IntegerChoices):
     THREE = 3
 
 
-class HomePageSettingsModel(models.Model):
+class HomePageSettingsModel(InstancesLimitModelMixin, models.Model):
     tab_title = models.CharField(max_length=100)
     brand_name = models.CharField(max_length=20)
     phone_number = models.CharField(max_length=100)
@@ -29,36 +31,26 @@ class HomePageSettingsModel(models.Model):
     contacts_columns_number = models.IntegerField(default=1, choices=ContactsColumnsNumber.choices)
     projects_columns_number = models.IntegerField(default=1, choices=ProjectsColumnsNumber.choices)
 
-    def clean(self) -> None:
-        if not HomePageSettingsModel.objects.filter(pk=self.pk).exists() and \
-                HomePageSettingsModel.objects.count():
-            raise ValidationError('you must use one settings model')
-        return super().clean()
-
 
 class ProjectModel(models.Model):
     description = models.CharField(max_length=100)
     preview_image = models.ImageField()
 
 
-class ContactModel(models.Model):
+class ContactModel(InstancesLimitModelMixin, models.Model):
+    instances_limit = 3
     city = models.CharField(max_length=100)
     address = models.TextField(max_length=500)
     phone = models.CharField(max_length=50)
 
-    def clean(self) -> None:
-        if not ContactModel.objects.filter(pk=self.pk).exists() and \
-                ContactModel.objects.count() == 3:
-            raise ValidationError('you can\'t create more than 3 model instances')
-        return super().clean()
 
-
-class ReviewModel(models.Model):
+class ReviewModel(InstancesLimitModelMixin, models.Model):
+    instances_limit = 3
     reviewer_name = models.CharField(max_length=200)
     reviews_text = models.TextField(max_length=1000)
 
-    def clean(self) -> None:
-        if not ReviewModel.objects.filter(pk=self.pk).exists() and \
-                ReviewModel.objects.count() == 3:
-            raise ValidationError('you can\'t create more than 3 model instances')
-        return super().clean()
+
+class WhyUsModel(InstancesLimitModelMixin, models.Model):
+    first_argument = models.TextField(max_length=200)
+    second_argument = models.TextField(max_length=200)
+    third_argument = models.TextField(max_length=200)

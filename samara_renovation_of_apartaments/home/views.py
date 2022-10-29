@@ -4,6 +4,7 @@ from .models import HomePageSettingsModel
 from .models import ProjectModel
 from .models import ReviewModel
 from .models import ContactModel
+from .models import WhyUsModel
 
 
 class HomePageView(TemplateView):
@@ -15,5 +16,6 @@ class HomePageView(TemplateView):
         context['projects'] = ProjectModel.objects.all()
         context['contacts'] = ContactModel.objects.all()
         context['reviews'] = ReviewModel.objects.all()
+        context['why_us'] = WhyUsModel.objects.get()
         return context
     

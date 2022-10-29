@@ -160,7 +160,7 @@
 					{% with 12|intdiv:settings.projects_columns_number as bootstrap_columns_number %}
 						{% for item in projects %}
 							<div class="col-lg-{{ bootstrap_columns_number }} col-md-{{ bootstrap_columns_number }} col-sm-{{ bootstrap_columns_number }} gallery">
-								<a class="project-image-wrap" href="work.html"><img src="{{ item.preview_image.url }}"
+								<a class="project-image-wrap" href="#"><img src="{{ item.preview_image.url }}"
 										class="img-responsive">
 									<div class="price">{{ item.description }}</div>
 								</a>
@@ -180,15 +180,15 @@
 							<h1>Почему мы</h1>
 							<div class="col-lg-4 col-md-4 col-sm-4 gallery principles">
 								<img src="{% static 'img/icons/Nature_&_outdoors_05.svg' %}" class="img-responsive">
-								<h4>Предоплата только 20%</h4>
+								<h4>{{ why_us.first_argument|linebreaks }}</h4>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 gallery principles">
 								<img src="{% static 'img/icons/Nature_&_outdoors_02.svg' %}" class="img-responsive">
-								<h4>Проверенные поставщики материалов</h4>
+								<h4>{{ why_us.second_argument|linebreaks }}</h4>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 gallery principles">
 								<img src="{% static 'img/icons/Nature_&_outdoors_03.svg' %}" class="img-responsive">
-								<h4>Работаем по закону и с договором</h4>
+								<h4>{{ why_us.third_argument|linebreaks }}</h4>
 							</div>
 						</div>
 					</div>

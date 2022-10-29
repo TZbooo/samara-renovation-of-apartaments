@@ -56,3 +56,7 @@
 html, body {
     overflow-x: hidden !important;
 }
+
+#why {
+    min-height: auto !important;
+}
