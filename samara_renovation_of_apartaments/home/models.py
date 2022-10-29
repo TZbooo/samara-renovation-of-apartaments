@@ -30,6 +30,7 @@ class HomePageSettingsModel(InstancesLimitModelMixin, models.Model):
     link_to_full_reviews_list = models.URLField()
     contacts_columns_number = models.IntegerField(default=1, choices=ContactsColumnsNumber.choices)
     projects_columns_number = models.IntegerField(default=1, choices=ProjectsColumnsNumber.choices)
+    slogan = models.TextField(max_length=100)
 
 
 class ProjectModel(models.Model):
