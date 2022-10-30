@@ -5,6 +5,7 @@ from .models import ProjectModel
 from .models import ReviewModel
 from .models import ContactModel
 from .models import WhyUsModel
+from .models import SeoModel
 
 
 class HomePageView(TemplateView):
@@ -17,5 +18,6 @@ class HomePageView(TemplateView):
         context['contacts'] = ContactModel.objects.all()
         context['reviews'] = ReviewModel.objects.all()
         context['why_us'] = WhyUsModel.objects.get()
+        context['seo'] = SeoModel.objects.get()
         return context
     

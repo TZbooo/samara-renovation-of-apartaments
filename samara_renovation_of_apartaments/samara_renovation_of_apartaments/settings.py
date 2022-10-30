@@ -27,11 +27,13 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = int(os.environ.get('DEBUG', default=1))
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
     'remsamara.ru',
     'www.remsamara.ru',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
+    'http://127.0.0.1',
     'https://remsamara.ru/',
     'https://www.remsamara.ru',
 ]

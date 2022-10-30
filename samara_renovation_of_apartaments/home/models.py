@@ -55,3 +55,9 @@ class WhyUsModel(InstancesLimitModelMixin, models.Model):
     first_argument = models.TextField(max_length=200)
     second_argument = models.TextField(max_length=200)
     third_argument = models.TextField(max_length=200)
+
+
+class SeoModel(InstancesLimitModelMixin, models.Model):
+    author = models.CharField(max_length=200)
+    description = models.CharField(max_length=500)
+    keywords = models.CharField(max_length=1000)
