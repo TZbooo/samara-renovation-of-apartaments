@@ -26,9 +26,14 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get('DEBUG', default=1))
 
-ALLOWED_HOSTS = ['remsamara.ru']
+ALLOWED_HOSTS = [
+    'remsamara.ru',
+    'www.remsamara.ru',
+]
+
 CSRF_TRUSTED_ORIGINS = [
     'https://remsamara.ru/',
+    'https://www.remsamara.ru',
 ]
 
 
