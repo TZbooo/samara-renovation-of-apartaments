@@ -20,7 +20,9 @@ services:
       - db
 
   nginx:
-    build: ./nginx
+    build:
+      context: .
+      network: host
     volumes:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
@@ -36,6 +38,8 @@ services:
 
   certbot:
     image: certbot/certbot
+    networks:
+      - host
     volumes:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
