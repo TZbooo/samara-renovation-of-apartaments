@@ -8,10 +8,11 @@ services:
     command: sh -c "python3 manage.py migrate &&
                     python3 manage.py collectstatic --noinput &&
                     python3 manage.py wait_for_db &&
-                    gunicorn --bind 0.0.0.0:8000 samara_renovation_of_apartaments.wsgi:application"
+                    gunicorn --certfile=/etc/certs/remsamara.crt --keyfile=/etc/certs/remsamara.key --bind 0.0.0.0:443 samara_renovation_of_apartaments.wsgi:application"
     expose:
-      - 8000
+      - 443
     volumes:
+      - ./nginx/certs:/etc/certs
       - static_volume:/code/staticfiles
       - media_volume:/code/mediafiles
     env_file:
