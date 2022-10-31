@@ -36,6 +36,7 @@ class HomePageSettingsModel(InstancesLimitModelMixin, models.Model):
 class ProjectModel(models.Model):
     description = models.CharField(max_length=100)
     preview_image = models.ImageField()
+    alt_attribute = models.CharField(max_length=200)
 
 
 class ContactModel(InstancesLimitModelMixin, models.Model):
