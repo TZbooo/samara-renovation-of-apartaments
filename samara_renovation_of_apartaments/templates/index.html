@@ -11,19 +11,24 @@
 	<meta name="author" content="{{ seo.author }}" />
 	<meta name="msapplication-TileColor" content="#da532c" />
 	<meta name="theme-color" content="#ffffff" />
-	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/icons/apple-touch-icon.pn' %}g" />
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/icons/apple-touch-icon.png' %}" />
 	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/icons/favicon-32x32.png' %}" />
 	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/icons/favicon-16x16.png' %}" />
 	<link rel="manifest" href="{% static 'img/icons/site.webmanifest' %}" />
 	<link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}" />
-	<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
-	<link href="{% static 'css/custom.css' %}" rel="stylesheet" />
-	<link href="{% static 'css/clock.css' %}" rel="stylesheet" />
-	<link href="{% static 'css/style2.css' %}" rel="stylesheet" />
-	<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+	<link href="{% static 'css/bootstrap.css' %}" rel="preload" as="style" onload="this.rel='stylesheet'" />
+	<noscript><link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" /></noscript>
+	<link href="{% static 'css/custom.css' %}" rel="preload" as="style" onload="this.rel='stylesheet'" />
+	<noscript><link rel="stylesheet" href="{% static 'css/custom.css' %}" /></noscript>
+	<link href="{% static 'css/clock.css' %}" rel="preload" as="style" onload="this.rel='stylesheet'" />
+	<noscript><link rel="stylesheet" href="{% static 'css/clock.css' %}" /></noscript>
+	<link href="{% static 'css/style2.css' %}" rel="preload" as="style" onload="this.rel='stylesheet'" />
+	<noscript><link rel="stylesheet" href="{% static 'css/style2.css' %}" /></noscript>
+	<link href="{% static 'css/font-awesome.min.css' %}" rel="preload" as="style" onload="this.rel='stylesheet'" />
+	<noscript><link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" /></noscript>
 	<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <script async src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script async src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 	<title>{{ settings.tab_title }}</title>
 </head>
@@ -169,7 +174,7 @@
 			</div>
 		</div>
 	</footer>
-	<script src="{% static 'js/jquery-1.8.2.min.js' %}" type="text/javascript"></script>
+	<script async src="{% static 'js/jquery-1.8.2.min.js' %}" type="text/javascript"></script>
 	<script language='javascript' type='text/javascript'>
 		function fulltime() {
 			var time = new Date();
@@ -205,7 +210,7 @@
 		}
 		fulltime();
 	</script>
-	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script async src="{% static 'js/bootstrap.min.js' %}"></script>
 <!--⠀⠀⠀⠀⠀⠀⠀⠀ ⢷⡀⠀⠀⠀⠀⠀⠀⠀⣾⠀⢸⣰⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠉⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠈⠉
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣨⡇⠀⠀⠀⠀⠀⠀⠀⣿⠀⢸⠃⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⢀⠀⠀⠀⢻⡄⠀⠀⠀⠀⠀⠘⢶⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠴
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠏⠀⠀⠀⠀⠀⠀⠀⠀⣿⡀⠘⣧⠀⠀⠀⠀⠀⠻⣷⣿⠀⠀⠀⠸⣿⡀⠀⠀⠻⣆⠀⠀⠀⠀⠀⠀⠙⠦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒
