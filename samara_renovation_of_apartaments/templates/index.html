@@ -5,7 +5,10 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name='viewport' content='width=device-width,initial-scale=1'/>
+	<meta content='true' name='HandheldFriendly' />
+	<meta content='width' name='MobileOptimized' />
+	<meta content='yes' name='apple-mobile-web-app-capable' />
 	<meta name="description" content="{{ seo.description }}" />
 	<meta name="keywords" content="{{ seo.keywords }}" />
 	<meta name="author" content="{{ seo.author }}" />
@@ -112,15 +115,15 @@
 					<div class="row centered mt mb">
 						<h1>Почему мы</h1>
 						<div class="col-lg-4 col-md-4 co l-sm-4 gallery principles">
-							<img src="{% static 'img/icons/Nature_&_outdoors_05.svg' %}" class="img-responsive">
+							<img src="{% static 'img/icons/Nature_&_outdoors_05.svg' %}" class="img-responsive" alt="Автобус">
 							<h4>{{ why_us.first_argument|linebreaks }}</h4>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-4 gallery principles">
-							<img src="{% static 'img/icons/Nature_&_outdoors_02.svg' %}" class="img-responsive">
+							<img src="{% static 'img/icons/Nature_&_outdoors_02.svg' %}" class="img-responsive" alt="ваза с цветами">
 							<h4>{{ why_us.second_argument|linebreaks }}</h4>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-4 gallery principles">
-							<img src="{% static 'img/icons/Nature_&_outdoors_03.svg' %}" class="img-responsive">
+							<img src="{% static 'img/icons/Nature_&_outdoors_03.svg' %}" class="img-responsive" alt="веточка папоротника">
 							<h4>{{ why_us.third_argument|linebreaks }}</h4>
 						</div>
 					</div>
