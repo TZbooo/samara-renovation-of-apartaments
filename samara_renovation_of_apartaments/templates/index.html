@@ -18,9 +18,7 @@
 	<meta name="theme-color" content="#ffffff" />
 	<link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}" />
 	<title>{{ settings.tab_title }}</title>
-	<!-- Bootstrap core CSS -->
 	<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
-	<!-- Custom styles for this template -->
 	<link href="{% static 'css/custom.css' %}" rel="stylesheet" />
 	<link href="{% static 'css/style2.css' %}" rel="stylesheet" />
 	<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
@@ -31,7 +29,6 @@
 </head>
 
 <body>
-	<!-- Static navbar -->
 	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="row">
@@ -57,7 +54,6 @@
 					</div>
 				</div>
 			</div>
-			<!--/.nav-collapse -->
 		</div>
 	</div>
 	<div id="headerwrap">
@@ -145,148 +141,138 @@
 						</div>
 					</div>
 				</div>
-				<!--col-lg-6-->
 			</div>
-			<!--/row -->
-		</div> <!--/container -->
-	</div>
-	<!--/headerwrap -->
-		<section id="works">
-			<div class="container">
-				<div class="centered mt mb">
-					<h1>Проекты</h1>
-					{% with 12|intdiv:settings.projects_columns_number as bootstrap_columns_number %}
-						{% for item in projects %}
-							{% if forloop.counter|mod:3 == 0 %}
-							<div class="row">
-							{% endif %}
-								<div class="col-lg-{{ bootstrap_columns_number }} col-md-{{ bootstrap_columns_number }} col-sm-{{ bootstrap_columns_number }} gallery">
-									<a class="project-image-wrap" href="#"><img src="{{ item.preview_image.url }}"
-											class="img-responsive">
-										<div class="price">{{ item.description }}</div>
-									</a>
-								</div>
-							{% if forloop.counter|mod:3 == 0 %}
-							</div>
-							{% endif %}
-						{% endfor %}
-						{% endwith %}
-				</div>
-				<!--/row -->
-			</div>
-			<!--/container -->
-		</section>
-		<div id="why">
-			<div id="w">
-				<div class="container" style="">
-					<div class="row">
-						<div class="row centered mt mb">
-							<h1>Почему мы</h1>
-							<div class="col-lg-4 col-md-4 co l-sm-4 gallery principles">
-								<img src="{% static 'img/icons/Nature_&_outdoors_05.svg' %}" class="img-responsive">
-								<h4>{{ why_us.first_argument|linebreaks }}</h4>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 gallery principles">
-								<img src="{% static 'img/icons/Nature_&_outdoors_02.svg' %}" class="img-responsive">
-								<h4>{{ why_us.second_argument|linebreaks }}</h4>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 gallery principles">
-								<img src="{% static 'img/icons/Nature_&_outdoors_03.svg' %}" class="img-responsive">
-								<h4>{{ why_us.third_argument|linebreaks }}</h4>
-							</div>
-						</div>
-					</div>
-					<!--/row -->
-				</div> <!-- /container -->
-			</div>
-			<!--/why -->
 		</div>
+	</div>
+	<section id="works">
 		<div class="container">
-			<div class="row centered mt mb">
-				<h1>Контакты</h1></br>
-				{% with 12|intdiv:settings.contacts_columns_number as bootstrap_columns_number %}
-					{% for contact in contacts %}
-						<div class="col-lg-{{ bootstrap_columns_number }} col-md-{{ bootstrap_columns_number }} col-sm-{{ bootstrap_columns_number }}">
-							<b>{{ contact.city }}:</b>
-							<p>{{ contact.address|linebreaks }}</p>
-							<p>{{ contact.phone }}</p>
+			<div class="centered mt mb">
+				<h1>Проекты</h1>
+				{% with 12|intdiv:settings.projects_columns_number as bootstrap_columns_number %}
+				{% for item in projects %}
+				{% if forloop.counter|mod:3 == 0 %}
+					<div class="row">
+				{% endif %}
+						<div class="col-lg-{{ bootstrap_columns_number }} col-md-{{ bootstrap_columns_number }} col-sm-{{ bootstrap_columns_number }} gallery">
+							<a class="project-image-wrap" href="#"><img src="{{ item.preview_image.url }}" class="img-responsive">
+								<div class="price">{{ item.description }}</div>
+							</a>
 						</div>
-					{% endfor %}
+				{% if forloop.counter|mod:3 == 0 %}
+					</div>
+				{% endif %}
+				{% endfor %}
 				{% endwith %}
 			</div>
 		</div>
-		<div class="container">
-			<div class="row centered">
-				<a href="{{ settings.link_to_full_reviews_list }}">
-					<h1 class="button button__center" style="margin-top: 0;">Отзывы</h1>
-				</a>
-			</div>
-			</br>
-			<div class="reviews-wrap__text row centered mb">
-				{% for review in reviews %}
-				<div class="col-lg-4 col-md-4 col-sm-4">
-					<b>{{ review.reviewer_name }}</b>
-					<p>{{ review.reviews_text }}</p>
+	</section>
+	<div id="why">
+		<div id="w">
+			<div class="container" style="">
+				<div class="row">
+					<div class="row centered mt mb">
+						<h1>Почему мы</h1>
+						<div class="col-lg-4 col-md-4 co l-sm-4 gallery principles">
+							<img src="{% static 'img/icons/Nature_&_outdoors_05.svg' %}" class="img-responsive">
+							<h4>{{ why_us.first_argument|linebreaks }}</h4>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 gallery principles">
+							<img src="{% static 'img/icons/Nature_&_outdoors_02.svg' %}" class="img-responsive">
+							<h4>{{ why_us.second_argument|linebreaks }}</h4>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 gallery principles">
+							<img src="{% static 'img/icons/Nature_&_outdoors_03.svg' %}" class="img-responsive">
+							<h4>{{ why_us.third_argument|linebreaks }}</h4>
+						</div>
+					</div>
 				</div>
-				{% endfor %}
 			</div>
 		</div>
-		<script src="{% static 'css/jquery-1.8.2.min.js' %}" type="text/javascript"></script>
-		<script language='javascript' type='text/javascript'>
-			function fulltime() {
-				var time = new Date();
-				var newYear = new Date("{{ settings.discount_end|date:'c' }}");
-				var totalRemains = (newYear.getTime() - time.getTime());
+	</div>
+	<div class="container">
+		<div class="row centered mt mb">
+			<h1>Контакты</h1>
+			</br>
+			{% with 12|intdiv:settings.contacts_columns_number as bootstrap_columns_number %}
+			{% for contact in contacts %}
+			<div class="col-lg-{{ bootstrap_columns_number }} col-md-{{ bootstrap_columns_number }} col-sm-{{ bootstrap_columns_number }}">
+				<b>{{ contact.city }}:</b>
+				<p>{{ contact.address|linebreaks }}</p>
+				<p>{{ contact.phone }}</p>
+			</div>
+			{% endfor %}
+			{% endwith %}
+		</div>
+	</div>
+	<div class="container">
+		<div class="row centered">
+			<a href="{{ settings.link_to_full_reviews_list }}">
+				<h1 class="button button__center" style="margin-top: 0;">Отзывы</h1>
+			</a>
+		</div>
+		</br>
+		<div class="reviews-wrap__text row centered mb">
+			{% for review in reviews %}
+			<div class="col-lg-4 col-md-4 col-sm-4">
+				<b>{{ review.reviewer_name }}</b>
+				<p>{{ review.reviews_text }}</p>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	<script src="{% static 'css/jquery-1.8.2.min.js' %}" type="text/javascript"></script>
+	<script language='javascript' type='text/javascript'>
+		function fulltime() {
+			var time = new Date();
+			var newYear = new Date("{{ settings.discount_end|date:'c' }}");
+			var totalRemains = (newYear.getTime() - time.getTime());
 
-				if (totalRemains > 1) {
-					var RemainsSec = (parseInt(totalRemains / 1000));
-					var RemainsFullDays = (parseInt(RemainsSec / (24 * 60 * 60)));
-					var secInLastDay = RemainsSec - RemainsFullDays * 24 * 3600;
-					var RemainsFullHours = (parseInt(secInLastDay / 3600));
-					if (RemainsFullHours < 10) {
-						RemainsFullHours = "0" + RemainsFullHours
-					};
-					var secInLastHour = secInLastDay - RemainsFullHours * 3600;
-					var RemainsMinutes = (parseInt(secInLastHour / 60));
-					if (RemainsMinutes < 10) {
-						RemainsMinutes = "0" + RemainsMinutes
-					};
-					var lastSec = secInLastHour - RemainsMinutes * 60;
-					if (lastSec < 10) {
-						lastSec = "0" + lastSec
-					};
+			if (totalRemains > 1) {
+				var RemainsSec = (parseInt(totalRemains / 1000));
+				var RemainsFullDays = (parseInt(RemainsSec / (24 * 60 * 60)));
+				var secInLastDay = RemainsSec - RemainsFullDays * 24 * 3600;
+				var RemainsFullHours = (parseInt(secInLastDay / 3600));
+				if (RemainsFullHours < 10) {
+					RemainsFullHours = "0" + RemainsFullHours
+				};
+				var secInLastHour = secInLastDay - RemainsFullHours * 3600;
+				var RemainsMinutes = (parseInt(secInLastHour / 60));
+				if (RemainsMinutes < 10) {
+					RemainsMinutes = "0" + RemainsMinutes
+				};
+				var lastSec = secInLastHour - RemainsMinutes * 60;
+				if (lastSec < 10) {
+					lastSec = "0" + lastSec
+				};
 
-					document.getElementById("RemainsFullDays").innerHTML = RemainsFullDays + "";
-					document.getElementById("RemainsFullHours").innerHTML = RemainsFullHours + "";
-					document.getElementById("RemainsMinutes").innerHTML = RemainsMinutes + "";
-					document.getElementById("lastSec").innerHTML = lastSec + "";
-					setTimeout('fulltime()', 10)
-				} else {
-					document.getElementById("clock").innerHTML = "Прием заявок со скидками окончен!";
-				}
+				document.getElementById("RemainsFullDays").innerHTML = RemainsFullDays + "";
+				document.getElementById("RemainsFullHours").innerHTML = RemainsFullHours + "";
+				document.getElementById("RemainsMinutes").innerHTML = RemainsMinutes + "";
+				document.getElementById("lastSec").innerHTML = lastSec + "";
+				setTimeout('fulltime()', 10)
+			} else {
+				document.getElementById("clock").innerHTML = "Прием заявок со скидками окончен!";
 			}
-		</script>
+		}
+	</script>
 
-		<script language='javascript'>
-			fulltime();
-		</script>
-		<footer id="footerwrap">
-			<div class="container">
-				<div class="row centered">
-					<div class="col-lg-6">
-						<p><b>Все парва защищены. 2022</b></p>
-					</div>
-					<div class="col-lg-6">
-						<p><b>{{ settings.slogan }}</b></p>
-					</div>
+	<script language='javascript'>
+		fulltime();
+	</script>
+	<footer id="footerwrap">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-6">
+					<p><b>Все парва защищены. 2022</b></p>
+				</div>
+				<div class="col-lg-6">
+					<p><b>{{ settings.slogan }}</b></p>
 				</div>
 			</div>
-		</footer>
-		<!--/footerwrap -->
-		<!-- Bootstrap core JavaScript -->
-		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+		</div>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
 <!--⠀⠀⠀⠀⠀⠀⠀⠀ ⢷⡀⠀⠀⠀⠀⠀⠀⠀⣾⠀⢸⣰⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠉⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠈⠉
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣨⡇⠀⠀⠀⠀⠀⠀⠀⣿⠀⢸⠃⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⢀⠀⠀⠀⢻⡄⠀⠀⠀⠀⠀⠘⢶⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠴
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠏⠀⠀⠀⠀⠀⠀⠀⠀⣿⡀⠘⣧⠀⠀⠀⠀⠀⠻⣷⣿⠀⠀⠀⠸⣿⡀⠀⠀⠻⣆⠀⠀⠀⠀⠀⠀⠙⠦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒
