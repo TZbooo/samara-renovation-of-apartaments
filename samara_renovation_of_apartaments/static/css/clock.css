@@ -1,0 +1,61 @@
+#clou_xs {
+    position: relative;
+    width: 400px;
+    height: 180px;
+    top: 30px;
+}
+
+#clock {
+    text-align: center;
+    font-size: 38px;
+    color: white;
+}
+
+#clock h3 {
+    color: white;
+    bottom: 15px;
+}
+
+#RemainsFullDays {
+    width: 80px;
+    border: #fff 2px solid;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+}
+
+#RemainsFullHours {
+    width: 80px;
+    margin-left: 10px;
+    border: #fff 2px solid;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+}
+
+#RemainsMinutes {
+    width: 80px;
+    margin-left: 10px;
+    border: #fff 2px solid;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+}
+
+#lastSec {
+    width: 80px;
+    margin-left: 10px;
+    border: #fff 2px solid;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+}
+
+#Rem {
+    font-size: 20px;
+    font-weight: normal;
+    color: white;
+    margin-left: 20px;
+    margin-right: 25px;
+    margin-top: -15px;
+}
