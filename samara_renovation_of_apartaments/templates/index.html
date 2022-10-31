@@ -90,7 +90,8 @@
 				<div class="row">
 				{% endif %}
 					<div class="col-lg-{{ bootstrap_columns_number }} col-md-{{ bootstrap_columns_number }} col-sm-{{ bootstrap_columns_number }} gallery">
-						<a class="project-image-wrap" href="#"><img src="{{ item.preview_image.url }}" class="img-responsive">
+						<a class="project-image-wrap" href="#">
+							<img src="{{ item.preview_image.url }}" class="img-responsive">
 							<div class="price">{{ item.description }}</div>
 						</a>
 					</div>
