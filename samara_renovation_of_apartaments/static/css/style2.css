@@ -101,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 
 #headerwrap {
-	background: url(../img/jeshoots-com.jpg) no-repeat center top fixed;
+	background: url(../img/jeshoots-com.webp) no-repeat center top fixed;
 	margin-top: 0px;
 	padding-top: 250px;
 	text-align:Left;
@@ -125,7 +125,7 @@ h1, h2, h3, h4, h5, h6 {
 	color:white;
 }
 #why {
-	background: #444 url(../img/bucket2.jpg) no-repeat center top fixed;
+	background: #444 url(../img/bucket2.webp) no-repeat center top fixed;
 	margin-top: 0px;
 	padding-top: 0px;
 	text-align:Left;
