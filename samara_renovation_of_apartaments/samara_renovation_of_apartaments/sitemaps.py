@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 
 class StaticViewSitemap(sitemaps.Sitemap):
     priority = 0.5
-    changefreq = 'monthly'
+    changefreq = 'daily'
 
     def items(self):
         return ['home']
