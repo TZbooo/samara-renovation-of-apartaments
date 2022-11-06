@@ -17,7 +17,6 @@
 }
 
 #RemainsFullDays {
-    width: 80px;
     border: #fff 2px solid;
     padding: 5px;
     color: white;
@@ -25,8 +24,6 @@
 }
 
 #RemainsFullHours {
-    width: 80px;
-    margin-left: 10px;
     border: #fff 2px solid;
     padding: 5px;
     color: white;
@@ -34,8 +31,6 @@
 }
 
 #RemainsMinutes {
-    width: 80px;
-    margin-left: 10px;
     border: #fff 2px solid;
     padding: 5px;
     color: white;
@@ -43,15 +38,13 @@
 }
 
 #lastSec {
-    width: 80px;
-    margin-left: 10px;
     border: #fff 2px solid;
     padding: 5px;
     color: white;
     border-radius: 5px;
 }
 
-#Rem {
+.Rem {
     font-size: 20px;
     font-weight: normal;
     color: white;

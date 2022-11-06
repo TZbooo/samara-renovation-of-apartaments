@@ -38,9 +38,15 @@
     }
 }
 
-@media (max-width: 768px) {
-    .navbar-content {
-        padding-left: 30px;
+@media (max-width: 740px) {
+    .navbar-header {
+        padding-left: 0;
+    }
+    .text-above-timer {
+        text-align: left;
+    }
+    #clock {
+        text-align: initial !important;
     }
 }
 
@@ -59,4 +65,17 @@ html, body {
 
 #why {
     min-height: auto !important;
+}
+
+.Rem {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.clock-cell__wrap {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
 }

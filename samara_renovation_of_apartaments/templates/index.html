@@ -66,19 +66,26 @@
 					<h1 style="font-size: {{ settings.bigest_title_text_font_size_in_pixels }};">{{ settings.bigest_title_text|linebreaks }}</h1>
 					<h3>{{ settings.under_bigest_title_text|linebreaks }}</h3>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-lg-6 clock-column">
 					<div id='clou_xs'>
 						<div id='clock'>
 							<h3 class="text-above-timer">{{ settings.until_discount_end_text|linebreaks }}</h3>
-							<span id='RemainsFullDays'></span> :
-							<span id='RemainsFullHours'></span> :
-							<span id='RemainsMinutes'></span> :
-							<span id='lastSec'></span>
-							</br>
-							<span id='Rem'>дн</span>
-							<span id='Rem'>час</span>
-							<span id='Rem'>мин</span>
-							<span id='Rem'>сек</span>
+							<span class="clock-cell__wrap">
+								<span id='RemainsFullDays'></span>
+							    <span class='Rem'>дн</span>
+							</span> :
+							<span class="clock-cell__wrap">
+								<span id='RemainsFullHours'></span>
+								<span class='Rem'>час</span>
+							</span> :
+							<span class="clock-cell__wrap">
+								<span id='RemainsMinutes'></span>
+								<span class='Rem'>мин</span>
+							</span> :
+							<span class="clock-cell__wrap">
+								<span id='lastSec'></span>
+								<span class='Rem'>сек</span>
+							</div>
 						</div>
 					</div>
 				</div>
